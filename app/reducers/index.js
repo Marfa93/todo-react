@@ -4,7 +4,7 @@ import * as types from '../actions/types';
 
 const { SHOW_ALL } = types.VisibilityFilters;
 
-function visibilityFilters(state = SHOW_ALL, action) {
+function visibilityFilter(state = SHOW_ALL, action) {
     switch (action.type) {
         case types.SET_VISIBILITY_FILTER:
             return action.filter;
@@ -43,7 +43,7 @@ function todos(state = [], action) {
 }
 
 const rootReducer = combineReducers({
-    visibilityFilters,
+    visibilityFilter,
     todos
 });
 
