@@ -20,6 +20,7 @@ function todos(state = [], action) {
             return [
                 ...state,
                 {
+                    id: action.id,
                     text: action.text,
                     completed: false
                 }
@@ -27,7 +28,7 @@ function todos(state = [], action) {
 
         case types.TOGGLE_TODO:
             return state.map((todo, index) => {
-                if (index === action.index) {
+                if (index === action.id) {
                     return {
                         ...todo,
                         completed: !todo.completed
